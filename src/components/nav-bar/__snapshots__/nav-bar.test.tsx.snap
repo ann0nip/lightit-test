@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a NavBar snapshot 1`] = `
+<DocumentFragment>
+  <nav
+    class="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32"
+  >
+    <div>
+      <svg
+        class="fill-white"
+      >
+        logo.svg
+      </svg>
+      <h1
+        class="text-gray-200"
+      >
+        Company Name
+      </h1>
+    </div>
+    <div
+      class="border-[#979797] relative"
+      data-testid="dropdown-btn"
+    >
+      <div
+        class="w-56 bg-white h-[41px] rounded-lg drop-shadow-input pl-3 focus:outline-0 focus:drop-shadow-none transition relative flex items-center justify-between"
+      >
+        <span>
+          Guardar y salir
+        </span>
+        <div
+          class="z-10 border-l"
+        >
+          <img
+            alt="arrow down"
+            class="mx-2 -rotate-90"
+            src="activo.png"
+          />
+        </div>
+      </div>
+    </div>
+  </nav>
+</DocumentFragment>
+`;

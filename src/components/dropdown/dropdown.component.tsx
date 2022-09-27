@@ -13,17 +13,17 @@ interface IDropdownProps {
 }
 
 function Dropdown({
-    options,
+    options = [],
     defaultOption,
 }: IDropdownProps) {
-    const [isFocused, setIsFocused] = useState(false);
+    const [isDropDownOpen, setIsDropDownOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<IDropdownOption>();
     const wrapperRef = useRef<any>(null);
 
     useEffect(() => {
         function handleClickOutside(event: any) {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-                setIsFocused(false);
+                setIsDropDownOpen(false);
             }
         }
 
@@ -33,32 +33,39 @@ function Dropdown({
         };
     }, [wrapperRef]);
 
-    const onValueChange = (selectedValue: IDropdownOption) => {
-        setSelectedItem(selectedValue);
-        setIsFocused(false);
+    useEffect(() => {
+        setIsDropDownOpen(false);
+    }, [selectedItem]);
+
+    const handleClick = () => {
+        setIsDropDownOpen(!isDropDownOpen)
+    };
+
+    const handleOptionChange = (selectedOption: IDropdownOption) => {
+        setSelectedItem(selectedOption);
     };
 
     return (
-        <div ref={wrapperRef} className="border-[#979797] relative">
+        <div data-testid='dropdown-btn' onClick={handleClick} ref={wrapperRef} className="border-[#979797] relative">
             <div
                 className={cx(
                     'w-56 bg-white h-[41px] rounded-lg drop-shadow-input pl-3 focus:outline-0 focus:drop-shadow-none transition relative flex items-center justify-between',
                     {
-                        'rounded-b-[0]': isFocused,
+                        'rounded-b-[0]': isDropDownOpen,
                     }
-                )}
-                onClick={() => setIsFocused(!isFocused)}>
+                )}>
                 <span>{selectedItem?.label || defaultOption?.label}</span>
                 <div className="z-10 border-l">
                     <img className='mx-2 -rotate-90' src={arrow} alt="arrow down" />
                 </div>
             </div>
-            {isFocused && (
-                <ul className="items-center block absolute w-full">
+            {isDropDownOpen && (
+                <ul data-testid="option-list" className="items-center block absolute w-full">
                     {options.map((option) => (
                         <li
+                            data-testid="option-element"
                             key={option.labelValue}
-                            onClick={() => onValueChange(option)}
+                            onClick={() => handleOptionChange(option)}
                             className="p-2 shadow-[inset_1px_0px_0px_rgba(0,0,0,0.2) bg-white drop-shadow-input focus:outline-0 focus:drop-shadow-none transition relative flex hover:bg-gray-200">
                             {option.label}
                         </li>
