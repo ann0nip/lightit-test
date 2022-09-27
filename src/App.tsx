@@ -1,14 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
+import NavBar from './components/nav-bar/nav-bar.component';
+
+const Layout = () => {
+  return <div>
+    <NavBar />
+    <section>
+      <div>
+        <div>
+          <li>Aberturas</li>
+          <li>Equipamiento</li>
+          <li>Terminaciones</li>
+        </div>
+        <div>
+          sidenav
+        </div>
+      </div>
+    </section>
+  </div>
+}
+
+const Test = () => {
+  return <h1>test</h1>
+}
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline text-red-600">
-        Lightit test
-      </h1>
-    </div>
+    <Routes>
+      <Route index element={<Layout />} />
+      <Route path="/aberturas" element={<Layout />}>
+        <Route path=":categories" element={<Test />} />
+      </Route>
+      {/* <Route path="*" element={<NoMatch />} /> */}
+    </Routes>
   );
 }
 
