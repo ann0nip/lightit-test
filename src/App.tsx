@@ -1,24 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import './App.css';
-import NavBar from './components/nav-bar/nav-bar.component';
+import Home from './routes/home/home.component';
 
-const Layout = () => {
-  return <div>
-    <NavBar />
-    <section>
-      <div>
-        <div>
-          <li>Aberturas</li>
-          <li>Equipamiento</li>
-          <li>Terminaciones</li>
-        </div>
-        <div>
-          sidenav
-        </div>
-      </div>
-    </section>
-  </div>
-}
 
 const Test = () => {
   return <h1>test</h1>
@@ -27,8 +10,8 @@ const Test = () => {
 function App() {
   return (
     <Routes>
-      <Route index element={<Layout />} />
-      <Route path="/aberturas" element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path="/aberturas" element={<Home />}>
         <Route path=":categories" element={<Test />} />
       </Route>
       {/* <Route path="*" element={<NoMatch />} /> */}

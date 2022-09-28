@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should take a NavBar snapshot 1`] = `
+exports[`should take a snapshot 1`] = `
 <DocumentFragment>
-  <nav
+  <header
     class="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32"
   >
     <div>
@@ -38,6 +38,6 @@ exports[`should take a NavBar snapshot 1`] = `
         </div>
       </div>
     </div>
-  </nav>
+  </header>
 </DocumentFragment>
 `;

@@ -1,7 +1,7 @@
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import Dropdown from '../dropdown/dropdown.component';
 
-const NavBar = () => {
+const Header = () => {
     const buttonOptions = [{
         label: 'Guardar y salir',
         labelValue: 0
@@ -13,16 +13,16 @@ const NavBar = () => {
         labelValue: 2
     }]
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32">
+        <header className="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32">
             <div>
                 <Logo className='fill-white' />
                 <h1 className='text-gray-200'>Company Name</h1>
             </div>
             <Dropdown options={buttonOptions} defaultOption={buttonOptions[0]} />
-        </nav>
+        </header>
     )
 }
 
 
 
-export default NavBar
+export default Header
