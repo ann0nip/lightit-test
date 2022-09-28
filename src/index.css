@@ -13,3 +13,41 @@ body {
 div#root {
   height: 100%;
 }
+
+.box-active {
+  position: relative;
+  background-color: #F7F7F7;
+}
+
+.top,
+.bottom {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  right: 0;
+  overflow: hidden;
+}
+
+.top {
+  top: -30px;
+}
+
+.bottom {
+  bottom: -30px;
+}
+
+.top::before,
+.bottom::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  height: 200%;
+  width: 200%;
+  border-radius: 100%;
+  box-shadow: 10px 10px 5px 100px #F7F7F7;
+  z-index: -1;
+}
+
+.top::before {
+  top: -100%;
+}
