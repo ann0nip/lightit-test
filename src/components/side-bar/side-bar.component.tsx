@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import cx from 'classnames';
-import React, { Fragment, useState } from 'react';
 
 import Aberturas from '../../assets/icons/Aberturas.png'
 import Equipamiento from '../../assets/icons/Equipamiento.png'

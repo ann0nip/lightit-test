@@ -1,5 +1,5 @@
-import { useState } from "react";
 import LeftArrow from '../../assets/icons/Activo.png'
+import Products from "../../routes/products/products.component";
 
 interface ISideBarPanelProps {
     showSidebar: boolean,
@@ -14,7 +14,7 @@ const SideBarPanel = ({ showSidebar, handleCloseSidebar }: ISideBarPanelProps) =
                     }`}
             >
                 <div className="relative flex flex-1">
-                    content
+                    <Products />
                     <div className="absolute right-0 flex items-center h-full">
                         <button onClick={handleCloseSidebar} className='toggle w-[20px]'>
                             <img src={LeftArrow} alt="close sidebar" className={`-rotate-90 ${showSidebar ? 'block' : 'hidden'}`} />
@@ -23,7 +23,7 @@ const SideBarPanel = ({ showSidebar, handleCloseSidebar }: ISideBarPanelProps) =
                 </div>
             </div>
         </>
-    );
+    )
 };
 
 export default SideBarPanel;
