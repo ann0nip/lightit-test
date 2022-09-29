@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should take a snapshot 1`] = `
+exports[`Header Component should take a snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32"
+    class="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32 h-[10%]"
   >
-    <div>
+    <a
+      href="/"
+    >
       <svg
         class="fill-white"
       >
@@ -16,9 +18,9 @@ exports[`should take a snapshot 1`] = `
       >
         Company Name
       </h1>
-    </div>
+    </a>
     <div
-      class="border-[#979797] relative"
+      class="border-[#979797] relative cursor-pointer"
       data-testid="dropdown-btn"
     >
       <div
@@ -33,7 +35,7 @@ exports[`should take a snapshot 1`] = `
           <img
             alt="arrow down"
             class="mx-2 -rotate-90"
-            src="activo.png"
+            src="Activo.png"
           />
         </div>
       </div>

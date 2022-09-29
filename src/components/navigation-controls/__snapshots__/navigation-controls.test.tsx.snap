@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row border-[#979797] cursor-pointer m-2"
+    data-testid="navigation-controls"
+  >
+    <div
+      class="bg-white rounded-md flex flex-col flex-wrap m-2"
+    >
+      <div
+        class="flex flex-1 items-center border-b"
+        data-name="Zoom In"
+        data-testid="Zoom In"
+      >
+        <img
+          alt="Zoom In"
+          src="ZoomIn.png"
+        />
+      </div>
+      <div
+        class="flex flex-1 items-center"
+        data-name="Zoom Out"
+        data-testid="Zoom Out"
+      >
+        <img
+          alt="Zoom Out"
+          src="ZoomOut.png"
+        />
+      </div>
+    </div>
+    <div
+      class="w-24 bg-white h-24 rounded-md flex flex-wrap m-2"
+    >
+      <div
+        class="w-8 flex"
+      />
+      <div
+        class="w-8 flex"
+        data-name="Flecha UP"
+        data-testid="Flecha UP"
+      >
+        <img
+          alt="Flecha UP"
+          src="Flecha.png"
+        />
+      </div>
+      <div
+        class="w-8 flex"
+      />
+      <div
+        class="w-8 flex -rotate-90"
+        data-name="Flecha Right"
+        data-testid="Flecha Right"
+      >
+        <img
+          alt="Flecha Right"
+          src="Flecha.png"
+        />
+      </div>
+      <div
+        class="w-8 flex"
+      />
+      <div
+        class="w-8 flex rotate-90"
+        data-name="Flecha Left"
+        data-testid="Flecha Left"
+      >
+        <img
+          alt="Flecha Left"
+          src="Flecha.png"
+        />
+      </div>
+      <div
+        class="w-8 flex"
+      />
+      <div
+        class="w-8 flex rotate-180"
+        data-name="Flecha Down"
+        data-testid="Flecha Down"
+      >
+        <img
+          alt="Flecha Down"
+          src="Flecha.png"
+        />
+      </div>
+      <div
+        class="w-8 flex"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

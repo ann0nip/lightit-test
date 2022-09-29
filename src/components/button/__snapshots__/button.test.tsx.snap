@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="border-[#979797] cursor-pointer m-2"
+    data-name="Label Text"
+    data-testid="button-btn"
+  >
+    <div
+      class="w-28 bg-white h-12 rounded-md focus:outline-0 focus:drop-shadow-none transition flex items-center justify-center"
+    >
+      <span>
+        Label Text
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

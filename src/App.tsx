@@ -1,13 +1,19 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './routes/home/home.component';
 
-const Content = () => <div></div>
+const InitialComponent = () => (
+  <Home>
+    {/* Put the content that you wanna show at the Content Window */}
+  </Home>
+)
 
 function App() {
   return (
-    <Home>
-      <Content />
-    </Home>
+    <Routes>
+      <Route path="/*" element={<InitialComponent />} />
+    </Routes>
+
   );
 }
 
