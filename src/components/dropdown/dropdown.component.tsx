@@ -46,7 +46,7 @@ function Dropdown({
     };
 
     return (
-        <div data-testid='dropdown-btn' onClick={handleClick} ref={wrapperRef} className="border-[#979797] relative">
+        <div data-testid='dropdown-btn' onClick={handleClick} ref={wrapperRef} className="border-[#979797] relative cursor-pointer">
             <div
                 className={cx(
                     'w-56 bg-white h-[41px] rounded-lg drop-shadow-input pl-3 focus:outline-0 focus:drop-shadow-none transition relative flex items-center justify-between',

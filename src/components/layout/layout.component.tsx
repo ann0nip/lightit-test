@@ -13,6 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <Header />
             <section className='flex min-h-full h-full w-full'>
                 <SideBar />
+
                 <div className='flex-1 bg-gray-200'>
                     sidenav
                 </div>

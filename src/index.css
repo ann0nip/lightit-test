@@ -15,39 +15,58 @@ div#root {
 }
 
 .box-active {
-  position: relative;
   background-color: #F7F7F7;
 }
 
-.top,
-.bottom {
-  position: absolute;
-  height: 30px;
-  width: 30px;
+.box-active::before,
+.box-active::after {
+  content: "";
+  width: 20px;
+  height: 20px;
   right: 0;
-  overflow: hidden;
-}
-
-.top {
-  top: -30px;
-}
-
-.bottom {
-  bottom: -30px;
-}
-
-.top::before,
-.bottom::before {
-  content: '';
   position: absolute;
-  right: 0;
-  height: 200%;
-  width: 200%;
-  border-radius: 100%;
-  box-shadow: 10px 10px 5px 100px #F7F7F7;
+}
+
+.box-active::before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="rgb(247, 247, 247)" d="M0 0 Q20 0 20 20 L20 0Z" /></svg>');
+  bottom: -20px;
+}
+
+.box-active::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"><path fill="rgb(247, 247, 247)" d="M0 20 Q20 20 20 0 L20 20Z" /></svg>');
+  top: -20px;
+}
+
+.toggle {
+  position: absolute;
+  border: solid 0 transparent;
+  transform: rotate(90deg);
+  background: #F7F7F7;
+  cursor: pointer;
+}
+
+.toggle:before {
+  right: 100%;
+  border-radius: 13% 0 0 0;
+  transform: skewX(-15deg) translate(25%);
+  position: absolute;
   z-index: -1;
+  top: 0;
+  bottom: 0;
+  width: 2em;
+  background: inherit;
+  content: '';
 }
 
-.top::before {
-  top: -100%;
+.toggle:after {
+  left: 100%;
+  border-radius: 0 13% 0 0;
+  transform: skewX(15deg) translate(-25%);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  width: 2em;
+  background: inherit;
+  content: '';
 }
