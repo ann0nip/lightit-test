@@ -8,7 +8,6 @@ type ContentWindowProps = {
 const ContentWindow: React.FC<ContentWindowProps> = ({ children }) => {
     const handleClick = (e: React.MouseEvent<HTMLElement>) => {
         console.log(e.currentTarget.getAttribute('data-name'));
-
     };
 
     return (
