@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LeftArrow from '../../assets/icons/activo.png'
+import LeftArrow from '../../assets/icons/Activo.png'
 
 interface ISideBarPanelProps {
     showSidebar: boolean,

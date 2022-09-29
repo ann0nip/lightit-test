@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import cx from 'classnames';
-import arrow from '../../assets/icons/activo.png';
+import arrow from '../../assets/icons/Activo.png';
 
 interface IDropdownOption {
     label: string;
