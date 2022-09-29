@@ -4,7 +4,7 @@ import React, { Fragment, useState } from 'react';
 import Aberturas from '../../assets/icons/Aberturas.png'
 import Equipamiento from '../../assets/icons/Equipamiento.png'
 import Terminaciones from '../../assets/icons/Terminaciones.png'
-import SideBarPanel from './side-bar-panel.component';
+import SideBarPanel from '../side-bar-panel/side-bar-panel.component';
 
 const MENU_ITEMS = [{
     id: 0,

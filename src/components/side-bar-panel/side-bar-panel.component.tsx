@@ -21,7 +21,6 @@ const SideBarPanel = ({ showSidebar, handleCloseSidebar }: ISideBarPanelProps) =
                         </button>
                     </div>
                 </div>
-
             </div>
         </>
     );
