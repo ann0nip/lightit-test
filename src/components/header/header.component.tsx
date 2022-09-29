@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import Dropdown from '../dropdown/dropdown.component';
 
@@ -13,11 +14,11 @@ const Header = () => {
         labelValue: 2
     }]
     return (
-        <header className="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32">
-            <div>
+        <header className="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32 h-[10%]">
+            <Link to="/">
                 <Logo className='fill-white' />
                 <h1 className='text-gray-200'>Company Name</h1>
-            </div>
+            </Link >
             <Dropdown options={buttonOptions} defaultOption={buttonOptions[0]} />
         </header>
     )

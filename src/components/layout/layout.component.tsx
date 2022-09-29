@@ -10,13 +10,13 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 
     return (
-        <React.Fragment>
+        <div className='min-h-full h-full w-full'>
             <Header />
-            <section className='flex min-h-full h-full w-full'>
+            <section className='flex h-[90%]'>
                 <SideBar />
                 <ContentWindow children={children} />
             </section>
-        </React.Fragment>
+        </div>
     )
 }
 
