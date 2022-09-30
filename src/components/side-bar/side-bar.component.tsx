@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cx from 'classnames';
 
 import Aberturas from '../../assets/icons/Aberturas.png'
 import Equipamiento from '../../assets/icons/Equipamiento.png'
 import Terminaciones from '../../assets/icons/Terminaciones.png'
 import SideBarPanel from '../side-bar-panel/side-bar-panel.component';
+import { useNavigate } from 'react-router-dom';
 
 const MENU_ITEMS = [{
     id: 0,
@@ -22,24 +23,29 @@ const MENU_ITEMS = [{
 
 const SideBar = () => {
     const [showSidebar, setShowSidebar] = useState(false);
-    const [categorySelected, setCategorySelected] = useState<number>()
+    const [categorySelected, setCategorySelected] = useState<string>()
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        categorySelected && navigate(`/${categorySelected}`)
+        categorySelected && setShowSidebar(true)
+    }, [categorySelected])
 
     const toggleSidebar = () => {
         setShowSidebar(!showSidebar)
     }
 
-    const handleClick = (category: number) => {
-        setCategorySelected(category)
-        setShowSidebar(true)
+    const handleClick = (category: string) => {
+        setCategorySelected(category.toLowerCase())
     }
     return (
         <div className='relative flex items-center'>
-            <nav className='w-24 z-40'>
+            <nav className='w-24 h-full flex justify-center items-center bg-white z-40'>
                 <ul>
                     {MENU_ITEMS.map((item) => (
                         <li key={item.id}>
-                            <div onClick={() => handleClick(item.id)} className={cx('relative cursor-pointer p-2 flex flex-col items-center hover:bg-[#F7F7F7]', {
-                                'box-active': categorySelected === item.id
+                            <div onClick={() => handleClick(item.name)} className={cx('relative cursor-pointer p-2 flex flex-col items-center hover:bg-[#F7F7F7]', {
+                                'box-active': categorySelected === item.name
                             })}>
                                 <img src={item.icon} alt={`${item.icon} button`} /><span className='text-xs'>{item.name}</span>
                             </div>
