@@ -28,7 +28,6 @@ const SideBar = () => {
 
     useEffect(() => {
         categorySelected && navigate(`/${categorySelected}`)
-        categorySelected && setShowSidebar(true)
     }, [categorySelected])
 
     const toggleSidebar = () => {
@@ -36,6 +35,7 @@ const SideBar = () => {
     }
 
     const handleClick = (category: string) => {
+        setShowSidebar(true)
         setCategorySelected(category.toLowerCase())
     }
     return (

@@ -3,7 +3,7 @@ import CategoryPanel from "../../components/category-panel/category-panel.compon
 
 const Test = () => <h1>SHOULD BE PRODUCTS LIST</h1>
 
-const NoMatch = () => <h1>404 not found</h1>
+const NoMatch = () => <h1 className="flex text-gray-400 m-auto">404 not category found</h1>
 
 const Products = () => {
     return (
