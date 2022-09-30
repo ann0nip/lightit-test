@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import CategoryPanel from "../../components/category-panel/category-panel.component";
+import ProductsCategory from "../../components/products-category/products-category.component";
+import ProductsList from "../../components/products-list/products-list.component";
 
 const Test = () => <h1>SHOULD BE PRODUCTS LIST</h1>
 
@@ -9,8 +10,8 @@ const Products = () => {
     return (
         <Routes>
             <Route path="/*">
-                <Route path=":category" element={<CategoryPanel />} />
-                <Route path=":category/:products" element={<Test />} />
+                <Route path=":categoryName" element={<ProductsCategory />} />
+                <Route path=":categoryName/:productsName" element={<ProductsList />} />
                 <Route path="*" element={<NoMatch />} />
             </Route>
         </Routes>

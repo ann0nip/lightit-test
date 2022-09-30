@@ -2,18 +2,36 @@ import axios from 'axios';
 
 const URI = 'https://us-central1-prueba-front-280718.cloudfunctions.net/';
 
-export type ItemsType = {
+type Items = {
     name: string;
     img: string
-}
-
-export type ProductsType = {
+};
+type Products = {
     name: string;
-    cateitemsgories: ItemsType[];
+    items: Items[];
 };
 
+type GetProductsResponse = {
+    data: Products[];
+};
 
 export const getProducts = async (category: string) => {
-    const { data } = await axios.get<ProductsType[]>(URI + category);
-    return data;
+    try {
+        const { data }: GetProductsResponse = await axios.get(
+            URI + category,
+            {
+                headers: {
+                    Accept: 'application/json',
+                },
+            },
+        );
+
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.log('error message: ', error.message);
+        } else {
+            console.log('unexpected error: ', error);
+        }
+    }
 };
