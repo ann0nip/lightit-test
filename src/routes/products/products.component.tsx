@@ -3,7 +3,7 @@ import ProductsCategory from '../../components/products-category/products-catego
 import ProductsList from '../../components/products-list/products-list.component';
 
 const NoMatch = () => (
-  <h1 className="m-auto flex text-gray-400">404 not category found</h1>
+  <h1 className="m-auto flex text-gray-400">404 category not found</h1>
 );
 
 const Products = () => {

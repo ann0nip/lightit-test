@@ -34,8 +34,3 @@ export interface DropdownProps {
     options: DropdownOptionProps[];
     defaultOption?: DropdownOptionProps;
 }
-
-export interface SideBarPanelProps {
-    showSidebar: boolean,
-    handleCloseSidebar: () => void
-}

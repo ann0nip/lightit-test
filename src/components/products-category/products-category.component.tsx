@@ -1,21 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import RightArrow from '../../assets/icons/Activo.png';
+import { AppContext, AppContextType } from '../../context/app.context';
 import { getProducts } from '../../services/products.service';
-import { ProductsType } from '../../utils/types';
 
 const ProductsCategory = () => {
   const { categoryName } = useParams();
-  const [products, setProducts] = useState<ProductsType[]>([]);
+  const { products, setProducts, clearProductsList } = useContext(
+    AppContext,
+  ) as AppContextType;
 
   useEffect(() => {
     const getData = async () => {
+      clearProductsList();
       const response = await getProducts(categoryName!);
       if (response) setProducts(response);
     };
 
     categoryName && getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [categoryName]);
 
   return (

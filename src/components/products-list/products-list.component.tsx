@@ -1,28 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import LeftArrow from '../../assets/icons/Activo.png';
-import { getProducts } from '../../services/products.service';
+import { AppContext, AppContextType } from '../../context/app.context';
 import { ItemsType } from '../../utils/types';
 
 const ProductsList = () => {
   const { categoryName = '', productsName = '' } = useParams();
+  const { products } = useContext(AppContext) as AppContextType;
+
   const [items, setItems] = useState<ItemsType[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
-      const response = await getProducts(categoryName!);
-      if (response) {
-        const products = response.find(
-          (products) =>
-            products.name.toLocaleLowerCase() ===
-            productsName!.toLocaleLowerCase(),
-        );
-        products && setItems(products.items);
-      }
-    };
-    categoryName && getData();
-  }, [categoryName]);
+    const productSelected = products.find(
+      (products) =>
+        products.name.toLocaleLowerCase() === productsName!.toLocaleLowerCase(),
+    );
+    productSelected && setItems(productSelected.items);
+  }, [products, productsName]);
 
   return (
     <div className="w-full p-6">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import cx from 'classnames';
 
 import Aberturas from '../../assets/icons/Aberturas.png';
@@ -6,6 +6,7 @@ import Equipamiento from '../../assets/icons/Equipamiento.png';
 import Terminaciones from '../../assets/icons/Terminaciones.png';
 import SideBarPanel from '../side-bar-panel/side-bar-panel.component';
 import { useNavigate } from 'react-router-dom';
+import { AppContext, AppContextType } from '../../context/app.context';
 
 const MENU_ITEMS = [
   {
@@ -26,22 +27,17 @@ const MENU_ITEMS = [
 ];
 
 const SideBar = () => {
-  const [showSidebar, setShowSidebar] = useState(false);
-  const [categorySelected, setCategorySelected] = useState<string>();
   const navigate = useNavigate();
+  const { setShowSidebar, categorySelected, setCategorySelected } = useContext(
+    AppContext,
+  ) as AppContextType;
 
-  useEffect(() => {
-    categorySelected && navigate(`/${categorySelected}`);
-  }, [categorySelected]);
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
-
-  const handleClick = (category: string) => {
+  const handleSelectCategory = (category: string) => {
     setShowSidebar(true);
-    setCategorySelected(category.toLowerCase());
+    setCategorySelected(category);
+    navigate(`/${category.toLowerCase()}`);
   };
+
   return (
     <div className="relative flex items-center">
       <nav className="z-40 flex h-full w-24 items-center justify-center bg-white">
@@ -49,7 +45,7 @@ const SideBar = () => {
           {MENU_ITEMS.map((item) => (
             <li key={item.id}>
               <div
-                onClick={() => handleClick(item.name)}
+                onClick={() => handleSelectCategory(item.name)}
                 className={cx(
                   'relative flex cursor-pointer flex-col items-center p-2 hover:bg-[#F7F7F7]',
                   {
@@ -64,10 +60,7 @@ const SideBar = () => {
           ))}
         </ul>
       </nav>
-      <SideBarPanel
-        showSidebar={showSidebar}
-        handleCloseSidebar={toggleSidebar}
-      />
+      <SideBarPanel />
     </div>
   );
 };

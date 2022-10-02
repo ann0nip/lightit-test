@@ -1,11 +1,18 @@
+import { useContext } from 'react';
 import LeftArrow from '../../assets/icons/Activo.png';
+import { AppContext, AppContextType } from '../../context/app.context';
 import Products from '../../routes/products/products.component';
-import { SideBarPanelProps } from '../../utils/types';
 
-const SideBarPanel = ({
-  showSidebar,
-  handleCloseSidebar,
-}: SideBarPanelProps) => {
+const SideBarPanel = () => {
+  const { showSidebar, setShowSidebar, setCategorySelected } = useContext(
+    AppContext,
+  ) as AppContextType;
+
+  const handleCloseSidebar = () => {
+    setShowSidebar(!showSidebar);
+    setCategorySelected(null);
+  };
+
   return (
     <>
       <div
