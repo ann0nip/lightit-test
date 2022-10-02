@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import cx from 'classnames';
 
 import Aberturas from '../../assets/icons/Aberturas.png';
