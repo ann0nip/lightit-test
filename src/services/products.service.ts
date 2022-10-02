@@ -7,7 +7,7 @@ const URI = 'https://us-central1-prueba-front-280718.cloudfunctions.net/';
 export const getProducts = async (category: string) => {
     try {
         const { data }: GetProductsResponseType = await axios.get(
-            URI + category,
+            URI + category.toLowerCase(),
             {
                 headers: {
                     Accept: 'application/json',

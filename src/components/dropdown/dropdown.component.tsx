@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import cx from 'classnames';
-import arrow from '../../assets/icons/Activo.png';
+import arrowDown from '../../assets/icons/Activo.png';
 import { DropdownOptionProps, DropdownProps } from '../../utils/types';
 
 const Dropdown = ({ options = [], defaultOption }: DropdownProps) => {
@@ -50,7 +50,7 @@ const Dropdown = ({ options = [], defaultOption }: DropdownProps) => {
       >
         <span>{selectedItem?.label || defaultOption?.label}</span>
         <div className="z-10 border-l">
-          <img className="mx-2 -rotate-90" src={arrow} alt="arrow down" />
+          <img className="mx-2 -rotate-90" src={arrowDown} alt="arrow down" />
         </div>
       </div>
       {isDropDownOpen && (

@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { getProducts } from '../services/products.service';
 import { ChildrenType, ProductsType } from '../utils/types';
 
 export type AppContextType = {
@@ -17,6 +18,16 @@ const AppProvider = ({ children }: ChildrenType) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [products, setProducts] = useState<ProductsType[]>([]);
   const [categorySelected, setCategorySelected] = useState<string | null>(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      clearProductsList();
+      const response = await getProducts(categorySelected!);
+      if (response) setProducts(response);
+    };
+
+    categorySelected && getData();
+  }, [categorySelected]);
 
   const clearProductsList = () => setProducts([]);
 
