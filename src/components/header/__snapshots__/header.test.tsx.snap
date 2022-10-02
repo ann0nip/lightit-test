@@ -3,7 +3,7 @@
 exports[`Header Component should take a snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="flex items-center justify-between flex-wrap bg-gray-800 p-4 px-32 h-[10%]"
+    class="flex h-[10%] flex-wrap items-center justify-between bg-gray-800 p-4 px-32"
   >
     <a
       href="/"
@@ -20,11 +20,11 @@ exports[`Header Component should take a snapshot 1`] = `
       </h1>
     </a>
     <div
-      class="border-[#979797] relative cursor-pointer"
+      class="relative cursor-pointer border-[#979797]"
       data-testid="dropdown-btn"
     >
       <div
-        class="w-56 bg-white h-[41px] rounded-lg drop-shadow-input pl-3 focus:outline-0 focus:drop-shadow-none transition relative flex items-center justify-between"
+        class="drop-shadow-input relative flex h-[41px] w-56 items-center justify-between rounded-lg bg-white pl-3 transition focus:outline-0 focus:drop-shadow-none"
       >
         <span>
           Guardar y salir

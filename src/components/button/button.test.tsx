@@ -1,30 +1,34 @@
-import { fireEvent, render, cleanup } from '@testing-library/react'
-import Button from './button.component'
+import { screen, fireEvent, render, cleanup } from '@testing-library/react';
+import Button from './button.component';
 
-const labelText = 'Label Text'
-const mockHandlerClick = jest.fn()
+const labelText = 'Label Text';
+const mockHandlerClick = jest.fn();
 
 afterEach(cleanup);
 
 describe('Button Component', () => {
-    it('should take a snapshot', () => {
-        const { asFragment } = render(<Button label={labelText} handleClick={mockHandlerClick} />)
+  it('should take a snapshot', () => {
+    const { asFragment } = render(
+      <Button label={labelText} handleClick={mockHandlerClick} />,
+    );
 
-        expect(asFragment()).toMatchSnapshot()
-    })
+    expect(asFragment()).toMatchSnapshot();
+  });
 
-    it('should render the label', () => {
-        const { container } = render(<Button label={labelText} handleClick={mockHandlerClick} />)
+  it('should render the label', () => {
+    const { container } = render(
+      <Button label={labelText} handleClick={mockHandlerClick} />,
+    );
 
-        expect(container).toHaveTextContent(labelText)
-    })
+    expect(container).toHaveTextContent(labelText);
+  });
 
-    it('should run the onClick event', () => {
-        const { getByText } = render(<Button label={labelText} handleClick={mockHandlerClick} />)
-        const button = getByText(labelText)
+  it('should run the onClick event', () => {
+    render(<Button label={labelText} handleClick={mockHandlerClick} />);
+    const button = screen.getByText(labelText);
 
-        fireEvent.click(button)
+    fireEvent.click(button);
 
-        expect(mockHandlerClick.mock.calls).toHaveLength(1)
-    })
-})
+    expect(mockHandlerClick.mock.calls).toHaveLength(1);
+  });
+});

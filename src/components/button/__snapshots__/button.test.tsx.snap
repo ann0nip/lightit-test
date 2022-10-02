@@ -3,12 +3,12 @@
 exports[`Button Component should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="border-[#979797] cursor-pointer m-2"
+    class="m-2 cursor-pointer border-[#979797]"
     data-name="Label Text"
     data-testid="button-btn"
   >
     <div
-      class="w-28 bg-white h-12 rounded-md focus:outline-0 focus:drop-shadow-none transition flex items-center justify-center"
+      class="flex h-12 w-28 items-center justify-center rounded-md bg-white transition focus:outline-0 focus:drop-shadow-none"
     >
       <span>
         Label Text

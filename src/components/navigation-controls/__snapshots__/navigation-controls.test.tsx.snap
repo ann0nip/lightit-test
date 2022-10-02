@@ -3,11 +3,11 @@
 exports[`Button Component should take a snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="flex flex-row border-[#979797] cursor-pointer m-2"
+    class="m-2 flex cursor-pointer flex-row border-[#979797]"
     data-testid="navigation-controls"
   >
     <div
-      class="bg-white rounded-md flex flex-col flex-wrap m-2"
+      class="m-2 flex flex-col flex-wrap rounded-md bg-white"
     >
       <div
         class="flex flex-1 items-center border-b"
@@ -31,13 +31,13 @@ exports[`Button Component should take a snapshot 1`] = `
       </div>
     </div>
     <div
-      class="w-24 bg-white h-24 rounded-md flex flex-wrap m-2"
+      class="m-2 flex h-24 w-24 flex-wrap rounded-md bg-white"
     >
       <div
-        class="w-8 flex"
+        class="flex w-8"
       />
       <div
-        class="w-8 flex"
+        class="flex w-8"
         data-name="Flecha UP"
         data-testid="Flecha UP"
       >
@@ -47,10 +47,10 @@ exports[`Button Component should take a snapshot 1`] = `
         />
       </div>
       <div
-        class="w-8 flex"
+        class="flex w-8"
       />
       <div
-        class="w-8 flex -rotate-90"
+        class="flex w-8 -rotate-90"
         data-name="Flecha Right"
         data-testid="Flecha Right"
       >
@@ -60,10 +60,10 @@ exports[`Button Component should take a snapshot 1`] = `
         />
       </div>
       <div
-        class="w-8 flex"
+        class="flex w-8"
       />
       <div
-        class="w-8 flex rotate-90"
+        class="flex w-8 rotate-90"
         data-name="Flecha Left"
         data-testid="Flecha Left"
       >
@@ -73,10 +73,10 @@ exports[`Button Component should take a snapshot 1`] = `
         />
       </div>
       <div
-        class="w-8 flex"
+        class="flex w-8"
       />
       <div
-        class="w-8 flex rotate-180"
+        class="flex w-8 rotate-180"
         data-name="Flecha Down"
         data-testid="Flecha Down"
       >
@@ -86,7 +86,7 @@ exports[`Button Component should take a snapshot 1`] = `
         />
       </div>
       <div
-        class="w-8 flex"
+        class="flex w-8"
       />
     </div>
   </div>

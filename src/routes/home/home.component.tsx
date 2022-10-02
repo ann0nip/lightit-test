@@ -1,15 +1,8 @@
-import Layout from "../../components/layout/layout.component";
+import Layout from '../../components/layout/layout.component';
+import { ChildrenType } from '../../utils/types';
 
-type HomeProps = {
-    children: React.ReactNode
-}
-
-const Home = ({ children }: HomeProps) => {
-    return (
-        <Layout>
-            {children}
-        </Layout>
-    );
+const Home = ({ children }: ChildrenType) => {
+  return <Layout>{children}</Layout>;
 };
 
 export default Home;

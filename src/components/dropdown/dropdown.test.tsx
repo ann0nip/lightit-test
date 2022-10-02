@@ -1,63 +1,59 @@
-import { render, cleanup, fireEvent, getAllByTestId } from '@testing-library/react'
+import { render, cleanup, fireEvent, screen } from '@testing-library/react';
 import Dropdown from './dropdown.component';
 
 afterEach(cleanup);
 
-const buttonOptions = [{
+const buttonOptions = [
+  {
     label: 'Guardar y salir',
-    labelValue: 0
-}, {
+    labelValue: 0,
+  },
+  {
     label: 'Salir sin guardar',
-    labelValue: 1
-}, {
+    labelValue: 1,
+  },
+  {
     label: 'Guardar y continuar',
-    labelValue: 2
-}]
+    labelValue: 2,
+  },
+];
 
 it('should render drop-down button', () => {
-    const { queryByTestId } = render(<Dropdown options={[]} />)
+  render(<Dropdown options={[]} />);
 
-    const dropDownButton = queryByTestId('dropdown-btn')
+  const dropDownButton = screen.queryByTestId('dropdown-btn');
 
-    expect(dropDownButton).not.toBeNull()
-})
+  expect(dropDownButton).not.toBeNull();
+});
 
 it('should render drop-down options', () => {
+  render(<Dropdown options={buttonOptions} />);
 
-    const { getByTestId } = render(<Dropdown options={buttonOptions} />)
+  const dropDownButton = screen.getByTestId('dropdown-btn');
+  fireEvent.click(dropDownButton);
 
-    const dropDownButton = getByTestId('dropdown-btn')
-    fireEvent.click(dropDownButton)
-
-    const optionList = getByTestId('option-list')
-    expect(optionList.children.length).toBe(3)
-
-})
+  const optionElements = screen.queryAllByTestId('option-element');
+  expect(optionElements.length).toBe(3);
+});
 
 it('should support empty options', () => {
+  render(<Dropdown options={[]} />);
 
-    const { getByTestId } = render(<Dropdown options={[]} />)
+  const dropDownButton = screen.getByTestId('dropdown-btn');
+  fireEvent.click(dropDownButton);
 
-    const dropDownButton = getByTestId('dropdown-btn')
-    fireEvent.click(dropDownButton)
-
-    const optionList = getByTestId('option-list')
-    expect(optionList.children.length).toBe(0)
-
-})
+  const optionElements = screen.queryAllByTestId('option-element');
+  expect(optionElements.length).toBe(0);
+});
 
 it('should select the right option', () => {
+  render(<Dropdown options={buttonOptions} />);
 
-    const { getByTestId, getAllByTestId } = render(<Dropdown options={buttonOptions} />)
+  const dropDownButton = screen.getByTestId('dropdown-btn');
+  fireEvent.click(dropDownButton);
 
-    const dropDownButton = getByTestId('dropdown-btn')
-    fireEvent.click(dropDownButton)
+  const optionElement = screen.getAllByTestId('option-element');
+  fireEvent.click(optionElement[1]);
 
-    const optionElement = getAllByTestId('option-element')
-    fireEvent.click(optionElement[1])
-
-    expect(dropDownButton).toHaveTextContent(buttonOptions[1].label)
-
-})
-
-
+  expect(dropDownButton).toHaveTextContent(buttonOptions[1].label);
+});
