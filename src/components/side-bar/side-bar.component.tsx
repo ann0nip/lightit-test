@@ -8,7 +8,7 @@ import SideBarPanel from '../side-bar-panel/side-bar-panel.component';
 import { useNavigate } from 'react-router-dom';
 import { AppContext, AppContextType } from '../../context/app.context';
 
-const MENU_ITEMS = [
+export const MENU_ITEMS = [
   {
     id: 0,
     name: 'Aberturas',
@@ -45,6 +45,7 @@ const SideBar = () => {
           {MENU_ITEMS.map((item) => (
             <li key={item.id}>
               <div
+                data-testid="category-button"
                 onClick={() => handleSelectCategory(item.name)}
                 className={cx(
                   'relative flex cursor-pointer flex-col items-center p-2 hover:bg-[#F7F7F7]',
