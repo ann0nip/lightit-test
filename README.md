@@ -23,3 +23,10 @@ It will launches the test runner in the interactive watch mode.
 Optional, if you want to see the code coverage you can do it by running:
 
 `npm run test:coverage`
+
+## TODOs
+
+Due to the deadline to finish this challenge, I consider these as _deliberate prudent technical debs_:
+
+- Move the tailwind classes into separate files or as Styled components.
+- Implement a flux architectural pattern using useReducer.
